@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: rgba(0, 22, 61, 0.76);
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+  color: white;
+  text-shadow: 0.5px 0.5px 4px rgba(252, 250, 230, 0.767);
+}
+
+nav {
+  display: inline-block;
+  width: 600px;
+  margin-top: 3px;
+  padding: 4px;
+  background-color: rgba(252, 250, 230, 0.767);
+  border-radius: 10px;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li p {
+  margin: 2px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+nav ul li p:hover {
+  background-color: gray;
+  color: white;
+  border-color: rgb(39, 39, 39);
+  cursor: pointer;
+}
+
+.top-buttons {
+  display: inline-block;
+  background-color: rgba(252, 250, 230, 0.767);
+  width: 150px;
+  padding: 10px;
+  font-weight: 500;
+  border: 2px solid gray;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.top-buttons:hover {
+  background-color: gray;
+  color: white;
+  border-color: rgb(39, 39, 39);
+  cursor: pointer;
+}
+
+#new-task {
+  width: auto;
+}
+
+#tasks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 600px;
+  background-color: rgba(252, 250, 230, 0.767);
+  margin: 3px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.task {
+  position: absolute;
+  flex-basis: 47%;
+  line-height: 1.5;
+  border: 1px solid gray;
+  position: relative;
+}
+
+.completed {
+  background-color: rgb(104, 104, 104) !important;
+}
+
+.completed::after {
+  content: "COMPLETED";
+  font-weight: 900;
+  font-size: 29px;
+  color: rgba(255, 255, 255, 0.527);
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  transform: rotate(-15deg) scaleX(1.25);
+  pointer-events: none;
+}
+
+.todo-title {
+  font-weight: 700;
+}
+
+.todo-desc {
+  text-align: left;
+  font-size: 14px;
+}
+
+.todo-due {
+  font-size: 12px;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.todo-priority {
+  display: inline-block;
+}
+
+.todo-delete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(255, 255, 255, 0.555);
+  font-size: 15px;
+  font-weight: 900;
+  border-bottom-right-radius: 10px;
+}
+
+.todo-delete:hover, .project-delete:hover {
+  color: white;
+  background-color: gray;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.todo-complete {
+  color: green;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 10%;
+  background-color: rgba(255, 255, 255, 0.555);
+  position: absolute;
+  bottom:0px; right:0;
+  cursor: pointer;
+}
+
+.project-delete {
+  position: absolute;
+  top:-10px; left:-10px;
+  height: 20px;
+  width: 20px;
+  background-color:rgba(255, 255, 255, 0.555);
+  border-radius: 50%;
+}
+
+/* FORM MODALS */
+#form-container {
+  position: fixed;
+  top:0; left:0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(31, 31, 31, 0.836);
+  opacity: 1;
+  transition: top 0.5s, opacity 0.5s;
+}
+
+#project-form-container, #todo-form-container {
+  width: 400px;
+  height: 145px;
+  background-color: white;
+  margin: auto;
+  position: absolute;
+  top: -40%; left: 0; bottom: 0; right: 0;
+  border-radius: 10px;
+}
+
+#todo-form-container {
+  height: 250px;
+}
+
+#todo-form input:not(:first-of-type), #todo-form select{
+  margin-top: 10px;
+}
+
+.note {
+  font-size: 11px;
+}
+
+.form-contents {
+  margin: 20px auto;
+}
+
+.form-contents h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.submit {
+  display: block;
+  margin: 8px auto;
+  border: 2px solid gray;
+  border-radius: 5px;
+  background-color: white;
+  height: 30px;
+}
+
+.submit:hover {
+  background-color: gray;
+  border-color: black;
+  color: white;
+}
+
+.hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  top: 300px !important;
+}
+
+/* Priorities */
+.low-priority {
+  background-color: rgba(7, 150, 7, 0.11);
+}
+
+.medium-priority {
+  background-color: rgba(255, 255, 0, 0.137);
+}
+
+.high-priority {
+  background-color: rgba(255, 0, 0, 0.137);
+}
